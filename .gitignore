@@ -1,0 +1,12 @@
+node_modules/
+dist/
+# Generado por `npm run agregar` a partir de data/encuestas.csv
+src/data/sondeo-agregado.json
+.vercel/
+.netlify/
+*.log
+.DS_Store
+# Configuración local de herramientas
+.claude/
+.vscode/
+.idea/

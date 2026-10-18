@@ -1,0 +1,102 @@
+{
+  "_nota": "Cuotas = fracción de votos válidos (candidaturas + blanco). Los perfiles autonómicos son APROXIMACIONES a los resultados del 23J, no datos oficiales: sustituir por los datos de infoelectoral.interior.gob.es para un análisis riguroso. El escenario 2026 es HIPOTÉTICO (swing proporcional), no una encuesta real.",
+  "parametros": {
+    "totalEscanos": 350,
+    "mayoriaAbsoluta": 176,
+    "barrera": 0.03,
+    "blanco": 0.009,
+    "nulos": 0.012
+  },
+  "perfiles": {
+    "AND":  { "participacion": 0.64, "cuotas": { "PP": 0.366, "PSOE": 0.332, "VOX": 0.139, "SUMAR": 0.117 } },
+    "ARA":  { "participacion": 0.70, "cuotas": { "PP": 0.372, "PSOE": 0.330, "VOX": 0.139, "SUMAR": 0.105 } },
+    "AST":  { "participacion": 0.63, "cuotas": { "PP": 0.344, "PSOE": 0.345, "VOX": 0.121, "SUMAR": 0.138 } },
+    "BAL":  { "participacion": 0.60, "cuotas": { "PP": 0.366, "PSOE": 0.305, "VOX": 0.157, "SUMAR": 0.138 } },
+    "CAN":  { "participacion": 0.58, "cuotas": { "PP": 0.310, "PSOE": 0.330, "VOX": 0.115, "SUMAR": 0.110, "CC": 0.078 } },
+    "CANT": { "participacion": 0.70, "cuotas": { "PP": 0.412, "PSOE": 0.309, "VOX": 0.128, "SUMAR": 0.074 } },
+    "CYL":  { "participacion": 0.70, "cuotas": { "PP": 0.422, "PSOE": 0.316, "VOX": 0.159, "SUMAR": 0.070 } },
+    "CLM":  { "participacion": 0.72, "cuotas": { "PP": 0.400, "PSOE": 0.334, "VOX": 0.178, "SUMAR": 0.065 } },
+    "CAT":  { "participacion": 0.62, "cuotas": { "PSOE": 0.343, "SUMAR": 0.140, "ERC": 0.132, "PP": 0.133, "JUNTS": 0.112, "VOX": 0.077 } },
+    "CV":   { "participacion": 0.70, "cuotas": { "PP": 0.364, "PSOE": 0.306, "VOX": 0.152, "SUMAR": 0.150 } },
+    "EXT":  { "participacion": 0.68, "cuotas": { "PP": 0.393, "PSOE": 0.386, "VOX": 0.137, "SUMAR": 0.065 } },
+    "GAL":  { "participacion": 0.60, "cuotas": { "PP": 0.433, "PSOE": 0.294, "SUMAR": 0.095, "BNG": 0.093, "VOX": 0.055 } },
+    "MAD":  { "participacion": 0.71, "cuotas": { "PP": 0.405, "PSOE": 0.273, "SUMAR": 0.144, "VOX": 0.139 } },
+    "MUR":  { "participacion": 0.70, "cuotas": { "PP": 0.413, "PSOE": 0.254, "VOX": 0.225, "SUMAR": 0.083 } },
+    "NAV":  { "participacion": 0.67, "cuotas": { "PSOE": 0.274, "BILDU": 0.170, "UPN": 0.152, "PP": 0.147, "SUMAR": 0.104, "VOX": 0.056 } },
+    "PV":   { "participacion": 0.64, "cuotas": { "PSOE": 0.252, "PNV": 0.240, "BILDU": 0.240, "PP": 0.116, "SUMAR": 0.105, "VOX": 0.026 } },
+    "RIO":  { "participacion": 0.71, "cuotas": { "PP": 0.452, "PSOE": 0.320, "VOX": 0.110, "SUMAR": 0.075 } },
+    "CEU":  { "participacion": 0.55, "cuotas": { "PP": 0.460, "PSOE": 0.255, "VOX": 0.225, "SUMAR": 0.030 } },
+    "MEL":  { "participacion": 0.50, "cuotas": { "PP": 0.490, "PSOE": 0.180, "VOX": 0.120, "SUMAR": 0.025 } }
+  },
+  "escenarios": [
+    {
+      "id": "real2023",
+      "nombre": "Resultados 23J",
+      "descripcion": "Aproximación a las generales de julio de 2023 a partir de perfiles autonómicos.",
+      "referenciaEscanos": { "PP": 137, "PSOE": 121, "VOX": 33, "SUMAR": 31, "ERC": 7, "JUNTS": 7, "BILDU": 6, "PNV": 5, "BNG": 1, "CC": 1, "UPN": 1 }
+    },
+    {
+      "id": "encuestas2026_separados",
+      "nombre": "Alianzas 2026",
+      "descripcion": "Escenario hipotético: swing proporcional sobre 2023, con Sumar dividido en Frente Amplio y Podemos, y los acuerdos territoriales del 29-N (ERC con Podemos en Cataluña, Compromís-Front Valencià y Unidad del Pueblo Canario).",
+      "sondeo": {
+        "deltaParticipacion": -0.02,
+        "factores": { "PP": 1.06, "PSOE": 0.80, "VOX": 1.45, "ERC": 0.90, "BILDU": 1.12, "PNV": 0.95, "BNG": 1.20 },
+        "transferencias": { "SUMAR": { "FA": 0.50, "PODEMOS": 0.25 } },
+        "nuevos": { "SALF": 0.02 },
+        "regionales": { "AA": 0.01 }
+      },
+      "alianzas": "29N"
+    },
+    {
+      "id": "encuestas2026_unidos",
+      "nombre": "Sim: Frente Unido",
+      "descripcion": "Mismo sondeo, pero la izquierda alternativa concurre unida. La unidad suma un 25 % más de voto, calibrado con 40dB (7,6 % separados frente a 9,5 % unidos); una cuarta parte de esa ganancia sale del PSOE.",
+      "base": "encuestas2026_separados",
+      "coaliciones": [
+        {
+          "marca": "GFU",
+          "miembros": ["SUMAR", "FA", "PODEMOS", "ERC", "COMPROMIS_FV", "UPC"],
+          "friccion": -0.25,
+          "traspasos": { "PSOE": 0.25 },
+          "_calibracion": "40dB para EL PAÍS/SER, 7-8/10/2026, 800 entrevistas online (error ±3,5 %): Frente Amplio 5,3 % + Podemos 2,3 % = 7,6 % por separado; unidos 9,5 %. Factor 9,5 / 7,6 = 1,25, es decir, friccion = -0,25. Traspasos: con unidad, los votantes de Sumar 2023 que irían al PSOE bajan del 12,2 % al 8,4 %; 3,8 puntos × 12,31 % (Sumar 2023) ≈ 0,47 puntos nacionales, que son aprox. el 25 % de la ganancia de 1,9 puntos. 40dB solo midió FA + Podemos: aplicarlo también a ERC, Compromís-FV y UPC es una extrapolación."
+        }
+      ]
+    },
+    {
+      "id": "promedio_encuestas",
+      "nombre": "Encuestas",
+      "descripcion": "Promedio ponderado de las encuestas cargadas, aplicado como swing proporcional sobre 2023, con los acuerdos territoriales del 29-N (ERC con Podemos en Cataluña, Compromís-Front Valencià y Unidad del Pueblo Canario).",
+      "encuestas": {
+        "base": "real2023",
+        "sucesores": { "SUMAR": ["FA", "PODEMOS"] },
+        "deltaParticipacion": 0
+      },
+      "alianzas": "29N"
+    }
+  ],
+  "alianzas": {
+    "29N": {
+      "_fuente": "El País, 16/10/2026: «Estos son los acuerdos territoriales cerrados en las izquierdas para las elecciones del 29-N». En el resto de comunidades Frente Amplio (Sumar en las encuestas) y Podemos concurren por separado; Frente Amplio suma socios menores (CHA, Somos Asturies, Ara Més, IPA, Batzarre) que ya iban en Sumar en 2023 o no se modelan.",
+      "coaliciones": [
+        { "marca": "ERC", "miembros": ["ERC", "PODEMOS"], "friccion": 0, "ambito": ["CAT"], "_nota": "Acuerdo Podemos-ERC; Frente Amplio (Comuns) va aparte" },
+        { "marca": "COMPROMIS_FV", "miembros": ["SUMAR", "FA", "PODEMOS", "ERC"], "friccion": 0, "ambito": ["CV"], "_nota": "Compromís-Front Valencià: Compromís, EU (IU), Podem y ERPV; Frente Amplio no presenta lista propia" },
+        { "marca": "UPC", "miembros": ["SUMAR", "FA", "PODEMOS"], "friccion": 0, "ambito": ["CAN"], "_nota": "Unidad del Pueblo Canario: Podemos, Nueva Canaria e IU. Drago Canarias va aparte (no modelado)" }
+      ]
+    }
+  },
+  "concentracion": {
+    "id": "concentracion_izquierda",
+    "nombre": "Voto útil",
+    "descripcion": "En cada comunidad, los votantes de la izquierda alternativa se concentran en la candidatura que más escaños da al bloque de izquierdas, con las alianzas del escenario base.",
+    "bases": ["promedio_encuestas", "encuestas2026_separados", "real2023"],
+    "izquierda": ["SUMAR", "FA", "PODEMOS", "ERC", "COMPROMIS_FV", "UPC", "AA", "BILDU", "BNG"],
+    "bloque": ["PSOE", "SUMAR", "FA", "PODEMOS", "ERC", "COMPROMIS_FV", "UPC", "AA", "BILDU", "BNG"],
+    "friccion": 0.1,
+    "permitirPSOE": false
+  },
+  "bloques": [
+    { "nombre": "PP + VOX + UPN + SALF", "corto": "PP+VOX", "partidos": ["PP", "VOX", "UPN", "SALF"] },
+    { "nombre": "PSOE + izquierda + nacionalistas", "corto": "PSOE+izq.", "partidos": ["PSOE", "SUMAR", "FA", "PODEMOS", "GFU", "ERC", "COMPROMIS_FV", "UPC", "AA", "JUNTS", "BILDU", "PNV", "BNG", "CC"] }
+  ]
+}

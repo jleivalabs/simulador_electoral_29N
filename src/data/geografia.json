@@ -1,0 +1,18 @@
+{
+  "_nota": "Corrección geográfica del swing de 2026 por partido. 'dentroComunidad': % provincial en unas autonómicas recientes, para repartir el voto entre las provincias de cada comunidad (solo cuenta la forma, no el nivel). 'crecimientoComunidad': % del partido en autonómicas de 2025-2026, para medir en qué comunidades ha crecido más o menos que en el resto respecto a 2023. 'pesoEntreComunidades' (0-1) amortigua esa corrección, porque las autonómicas tienen efectos propios (candidato regional, fecha). Las comunidades sin datos mantienen el reparto de las generales de 2023. Solo se aplica a escenarios con sondeo (2026), no a Resultados 23J.",
+  "VOX": {
+    "_fuentes": "Wikipedia (tablas por circunscripción, que citan las juntas electorales): Andalucía 17/05/2026, Aragón 08/02/2026, Castilla y León 15/03/2026, Extremadura 21/12/2025, Castilla-La Mancha 28/05/2023, Comunidad Valenciana 28/05/2023, Cataluña 12/05/2024, País Vasco 21/04/2024. Galicia (VOX sin representación) y Canarias (resultados por isla) no se incluyen.",
+    "dentroComunidad": {
+      "04": 23.2, "11": 13.0, "14": 12.6, "18": 15.1, "21": 14.9, "23": 13.6, "29": 14.6, "41": 10.8,
+      "22": 18.7, "44": 20.3, "50": 17.3,
+      "05": 19.3, "09": 18.4, "24": 16.5, "34": 20.4, "37": 18.8, "40": 19.4, "42": 15.8, "47": 20.7, "49": 19.9,
+      "06": 17.2, "10": 16.4,
+      "02": 12.4, "13": 12.0, "16": 10.5, "19": 16.1, "45": 13.3,
+      "03": 12.3, "12": 13.1, "46": 12.6,
+      "08": 8.0, "17": 6.4, "25": 6.2, "43": 10.2,
+      "01": 3.7, "48": 1.9, "20": 1.5
+    },
+    "crecimientoComunidad": { "AND": 13.8, "ARA": 17.8, "CYL": 18.9, "EXT": 16.9 },
+    "pesoEntreComunidades": 0.5
+  }
+}

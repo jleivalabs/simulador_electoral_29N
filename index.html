@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador Electoral · Congreso</title>
+    <meta name="description" content="Simulador interactivo del reparto de escaños del Congreso con el sistema D'Hondt provincial." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="cabecera">
+      <p class="antetitulo">Congreso de los Diputados · 350 escaños</p>
+      <h1>Simulador electoral interactivo</h1>
+      <p class="entradilla">
+        Reparto D'Hondt provincia a provincia, con barrera del 3 %, y comparativa de escenarios de coalición.
+      </p>
+      <nav id="escenarios" class="escenarios" role="tablist" aria-label="Escenarios"></nav>
+      <p id="descripcion" class="descripcion" aria-live="polite"></p>
+      <section id="carga" class="carga" aria-label="Cargar encuestas" hidden></section>
+    </header>
+
+    <main class="rejilla">
+      <section class="tarjeta tarjeta--mapa" aria-labelledby="t-mapa">
+        <h2 id="t-mapa">Mapa provincial</h2>
+        <div id="mapa" class="mapa"></div>
+        <div id="leyenda" class="leyenda"></div>
+      </section>
+
+      <section class="tarjeta tarjeta--hemi" aria-labelledby="t-hemi">
+        <h2 id="t-hemi">Composición del Congreso</h2>
+        <p id="resumen" class="resumen"></p>
+        <div id="fuente-escanos" class="fuente-escanos" role="tablist" aria-label="Origen de los escaños" hidden>
+          <button type="button" role="tab" data-modo="encuesta" aria-selected="true">Según la encuesta</button>
+          <button type="button" role="tab" data-modo="modelo" aria-selected="false">Modelo provincial</button>
+        </div>
+        <div id="hemiciclo" class="hemiciclo"></div>
+      </section>
+
+      <section id="encuestas" class="tarjeta tarjeta--encuestas" aria-labelledby="t-enc" hidden></section>
+      <section id="historico" class="tarjeta tarjeta--encuestas" aria-labelledby="t-hist" hidden></section>
+      <section id="concentracion" class="tarjeta tarjeta--encuestas" aria-labelledby="t-conc" hidden></section>
+    </main>
+
+    <footer class="pie">
+      <p>
+        <strong>Metodología.</strong> Escaños por provincia según el reparto de 2023. Censo y perfiles de voto son
+        aproximaciones; el escenario 2026 es hipotético (swing proporcional). No son datos oficiales: consulte
+        infoelectoral.interior.gob.es para resultados reales.
+      </p>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

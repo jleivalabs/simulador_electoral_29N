@@ -1,0 +1,12 @@
+{
+  "_nota": "Configuración del promedio de encuestas. Las cifras del CSV deben ser estimación de voto (% sobre voto válido). Pon datosDeEjemplo a false cuando el CSV tenga encuestas reales.",
+  "datosDeEjemplo": true,
+  "fechaReferencia": null,
+  "ventanaDias": 45,
+  "vidaMediaDias": 14,
+  "muestraReferencia": 1000,
+  "unaPorEncuestadora": true,
+  "encuestadoras": {
+    "CIS": { "incluir": true, "peso": 0.5 }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_nota": "'posicion' ordena el hemiciclo de izquierda a derecha. 'etiquetas' sustituye el nombre por comunidad (clave = ccaa). 'corto' se usa en tablas estrechas. 'ambito': comunidades donde se presenta un partido regional que no estaba en 2023 (su voto nacional se reparte solo allí). 'perfilProvincial': % por provincia (código INE) en unas elecciones de referencia, para repartir ese voto según su fuerza relativa en cada provincia.",
+  "partidos": [
+    { "id": "PODEMOS", "nombre": "Podemos", "color": "#6B2E68", "posicion": 10 },
+    { "id": "GFU", "nombre": "Gran Frente Unido", "corto": "GFU", "color": "#4B0082", "posicion": 12 },
+    { "id": "UPC", "nombre": "Unidad del Pueblo Canario", "corto": "UPC", "color": "#8C4FA3", "posicion": 13 },
+    { "id": "SUMAR", "nombre": "Sumar", "color": "#E51C55", "posicion": 15 },
+    { "id": "FA", "nombre": "Frente Amplio", "corto": "FA", "color": "#C2185B", "posicion": 16 },
+    { "id": "COMPROMIS_FV", "nombre": "Compromís-Front Valencià", "corto": "Compromís", "color": "#E8762C", "posicion": 17 },
+    {
+      "id": "AA", "nombre": "Adelante Andalucía", "corto": "Adelante", "color": "#2E7D5B", "posicion": 19, "ambito": ["AND"],
+      "perfilProvincial": { "04": 3.1, "11": 14.3, "14": 8.3, "18": 6.8, "21": 8.0, "23": 4.4, "29": 9.3, "41": 12.9 },
+      "_fuentePerfil": "Elecciones al Parlamento de Andalucía, 17/05/2026: % por circunscripción (Resolución de la Junta Electoral de Andalucía de 2/06/2026, vía Wikipedia). Solo se usa la forma del reparto entre provincias, no el nivel."
+    },
+    { "id": "BILDU", "nombre": "EH Bildu", "corto": "Bildu", "color": "#A4BF1E", "posicion": 20 },
+    { "id": "ERC", "nombre": "ERC", "color": "#F3B219", "posicion": 25 },
+    { "id": "BNG", "nombre": "BNG", "color": "#76B3DD", "posicion": 28 },
+    { "id": "PSOE", "nombre": "PSOE", "color": "#EF1C27", "posicion": 40, "etiquetas": { "CAT": "PSC-PSOE", "PV": "PSE-EE", "GAL": "PSdeG-PSOE" } },
+    { "id": "PNV", "nombre": "PNV", "color": "#1E6B3A", "posicion": 50 },
+    { "id": "JUNTS", "nombre": "Junts", "color": "#00A99D", "posicion": 55 },
+    { "id": "CC", "nombre": "Coalición Canaria", "corto": "CC", "color": "#E8C300", "posicion": 58 },
+    { "id": "TE", "nombre": "Teruel Existe", "corto": "TE", "color": "#037252", "posicion": 60 },
+    { "id": "UPN", "nombre": "UPN", "color": "#2A52BE", "posicion": 65 },
+    { "id": "PP", "nombre": "PP", "color": "#1D84CE", "posicion": 70 },
+    { "id": "VOX", "nombre": "VOX", "color": "#63BE21", "posicion": 80 },
+    { "id": "SALF", "nombre": "SALF", "color": "#333333", "posicion": 85 }
+  ]
+}
