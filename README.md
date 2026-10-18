@@ -28,7 +28,7 @@ faltaron al siguiente partido.
 
 ## Puesta en marcha
 
-Requisitos: **Node.js 18 o superior** (recomendado 20 LTS o superior) y npm.
+Requisitos: **Node.js 20.19 o superior, o 22.12 o superior** (lo exige Vite 8) y npm.
 
 ```bash
 npm install

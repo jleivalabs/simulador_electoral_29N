@@ -6,6 +6,12 @@ src/data/sondeo-agregado.json
 .netlify/
 *.log
 .DS_Store
+# Variables de entorno y secretos (nunca se versionan)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
 # Configuración local de herramientas
 .claude/
 .vscode/

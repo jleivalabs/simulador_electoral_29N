@@ -24,7 +24,10 @@ function escribir(entradas) {
 }
 
 const celdaCsv = (v) => {
-  const s = String(v ?? '');
+  let s = String(v ?? '');
+  // Inyección de fórmulas: un texto que empiece por = + - @ (p. ej. un nombre de encuestadora del CSV cargado)
+  // se ejecutaría como fórmula al abrirlo en Excel; se antepone un apóstrofo. Los números no se tocan.
+  if (typeof v === 'string' && /^[=+\-@\t\r]/.test(s)) s = `'${s}`;
   return /[",\n;]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
 };
 
