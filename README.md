@@ -10,6 +10,11 @@ promedio ponderado y una simulación de «voto útil» para la izquierda, con la
 
 ## Qué hace
 
+![Vista general: mapa provincial coloreado por partido ganador y hemiciclo del Congreso con la línea de mayoría absoluta](docs/img/vista-general.png)
+
+*Pestaña «Resultados 23J»: mapa por provincia (la intensidad del color indica el % del ganador) y hemiciclo con
+la barra de 176 escaños, los bloques y la variación de cada partido respecto a la pestaña anterior.*
+
 | Pestaña | Contenido |
 |---|---|
 | **Resultados 23J** | Modelo de las generales de 2023 (asigna mal 4 escaños frente al resultado oficial). |
@@ -81,6 +86,8 @@ data/                       Datos de entrada de encuestas
 scripts/
   verificar.mjs             Pruebas del motor
   agregar.mjs               Promedio de encuestas en la terminal
+
+docs/img/                   Capturas usadas en este README
 ```
 
 ## Cómo funciona el modelo
@@ -127,16 +134,28 @@ Una fila por encuesta. Se aceptan separadores `,` o `;` (el formato de Excel en 
 
 Ejemplo: [`data/encuestas_reales/6_electopanel_18oct_tras_alianzas.csv`](data/encuestas_reales/6_electopanel_18oct_tras_alianzas.csv).
 
-### Ponderación
+### Carga y ponderación
 
-Peso de cada encuesta = 0,5^(días / vida media) × √(muestra / 1000) × peso de la encuestadora. Por defecto se usa
-una sola encuesta por empresa (la más reciente), dentro de una ventana de 45 días. Todo es configurable en la
-web (sección «Ponderación») y en `data/agregacion.json`, CIS incluido (excluirlo o darle otro peso).
+![Carga de CSV de encuestas y controles de ponderación: fecha de referencia, vida media, ventana, muestra de referencia, una encuesta por empresa y peso del CIS](docs/img/carga-ponderacion.png)
 
-En la pestaña Encuestas los archivos cargados se guardan en el navegador. El **histórico** permite guardar cada
-promedio, volver a cargarlo exactamente igual y descargarlo en CSV.
+Pulsa «Cargar CSV de encuestas» o arrastra uno o varios archivos a la página. Peso de cada encuesta =
+0,5^(días / vida media) × √(muestra / 1000) × peso de la encuestadora. Por defecto se usa una sola encuesta por
+empresa (la más reciente), dentro de una ventana de 45 días. Todo es configurable en la web (sección
+«Ponderación») y en `data/agregacion.json`, CIS incluido (excluirlo o darle otro peso). Los archivos cargados se
+guardan en el navegador.
+
+### Encuestas utilizadas e histórico
+
+![Tabla de encuestas utilizadas con % de voto y escaños publicados, e histórico de promedios guardados con su resultado](docs/img/encuestas-historico.png)
+
+La tabla muestra cada encuesta con su peso, su % de voto y, debajo, los escaños que publica. El hemiciclo puede
+mostrar esos escaños publicados («Según la encuesta») o el cálculo del modelo («Modelo provincial»). El
+**histórico** guarda cada promedio con sus archivos y su ponderación: se puede volver a cargar exactamente igual,
+borrar o descargar en CSV.
 
 ## Voto útil
+
+![Panel de voto útil: escenario base, selector «Concentrar en», fricción y tabla por comunidad con la candidatura receptora, los escaños del bloque y las alternativas](docs/img/voto-util.png)
 
 Para cada comunidad, prueba cada candidatura de la izquierda como receptora: el voto del resto pasa a ella, menos
 una fricción (votantes que no siguen la consigna) que es configurable, y se recalcula D'Hondt. El selector
